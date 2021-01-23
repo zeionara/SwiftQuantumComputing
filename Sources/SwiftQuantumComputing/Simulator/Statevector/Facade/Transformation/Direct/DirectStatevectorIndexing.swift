@@ -1,5 +1,5 @@
 //
-//  DirectStatevectorIndexTransformation.swift
+//  DirectStatevectorIndexing.swift
 //  SwiftQuantumComputing
 //
 //  Created by Enrique de la Torre on 18/01/2021.
@@ -29,6 +29,6 @@ typealias DirectStatevectorAdditionIndexes = (gateMatrixRow: Int,
 
 // MARK: - Protocol definition
 
-protocol DirectStatevectorIndexTransformation {
+protocol DirectStatevectorIndexing {
     func indexesToCalculateStatevectorValueAtPosition(_ position: Int) -> DirectStatevectorAdditionIndexes
 }

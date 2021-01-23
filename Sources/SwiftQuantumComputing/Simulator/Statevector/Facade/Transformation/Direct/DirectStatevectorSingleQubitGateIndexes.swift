@@ -1,5 +1,5 @@
 //
-//  DirectStatevectorSingleQubitGateIndexTransformation.swift
+//  DirectStatevectorSingleQubitGateIndexes.swift
 //  SwiftQuantumComputing
 //
 //  Created by Enrique de la Torre on 22/01/2021.
@@ -22,7 +22,7 @@ import Foundation
 
 // MARK: - Main body
 
-struct DirectStatevectorSingleQubitGateIndexTransformation {
+struct DirectStatevectorSingleQubitGateIndexes {
 
     // MARK: - Private properties
 
@@ -37,9 +37,9 @@ struct DirectStatevectorSingleQubitGateIndexTransformation {
     }
 }
 
-// MARK: - DirectStatevectorIndexTransformation methods
+// MARK: - DirectStatevectorIndexing methods
 
-extension DirectStatevectorSingleQubitGateIndexTransformation: DirectStatevectorIndexTransformation {
+extension DirectStatevectorSingleQubitGateIndexes: DirectStatevectorIndexing {
     func indexesToCalculateStatevectorValueAtPosition(_ position: Int) -> DirectStatevectorAdditionIndexes {
         if position & mask == 0 {
             return (0, AnySequence([(0, position), (1,  position | mask)]))
