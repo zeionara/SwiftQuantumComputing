@@ -52,7 +52,7 @@ struct DirectStatevectorTransformation {
 extension DirectStatevectorTransformation: StatevectorTransformation {
     func apply(components: SimulatorGate.Components, toStatevector vector: Vector) -> Vector {
         let matrix: SimulatorMatrix!
-        let idxTransformation: DirectStatevectorIndexing!
+        let indexer: DirectStatevectorIndexing!
         var filter: Int? = nil
 
         switch components.simulatorGateMatrix {
@@ -60,18 +60,18 @@ extension DirectStatevectorTransformation: StatevectorTransformation {
             matrix = singleQubitmatrix
 
             let target = components.inputs[0]
-            idxTransformation = indexingFactory.makeSingleQubitGateIndexTransformation(gateInput: target)
+            indexer = indexingFactory.makeSingleQubitGateIndexer(gateInput: target)
         case .otherMultiQubitMatrix(let multiQubitMatrix):
             matrix = multiQubitMatrix
 
-            idxTransformation = indexingFactory.makeMultiQubitGateIndexTransformation(gateInputs: components.inputs)
+            indexer = indexingFactory.makeMultiQubitGateIndexer(gateInputs: components.inputs)
         case .fullyControlledSingleQubitMatrix(let controlledMatrix, _):
             matrix = controlledMatrix
 
             let lastIndex = components.inputs.count - 1
 
             let target = components.inputs[lastIndex]
-            idxTransformation = indexingFactory.makeSingleQubitGateIndexTransformation(gateInput: target)
+            indexer = indexingFactory.makeSingleQubitGateIndexer(gateInput: target)
 
             let controls = Array(components.inputs[0..<lastIndex])
             filter = Int.mask(activatingBitsAt: controls)
@@ -79,7 +79,7 @@ extension DirectStatevectorTransformation: StatevectorTransformation {
 
         return apply(matrix: matrix,
                      toStatevector: vector,
-                     transformingIndexesWith: idxTransformation,
+                     transformingIndexesWith: indexer,
                      selectingStatesWith: filter)
     }
 }
@@ -92,14 +92,14 @@ private extension DirectStatevectorTransformation {
 
     func apply(matrix: SimulatorMatrix,
                toStatevector vector: Vector,
-               transformingIndexesWith idxTransformation: DirectStatevectorIndexing,
+               transformingIndexesWith indexer: DirectStatevectorIndexing,
                selectingStatesWith filter: Int? = nil) -> Vector {
         return try! Vector.makeVector(count: vector.count, maxConcurrency: maxConcurrency, value: { vectorIndex in
             if let filter = filter, vectorIndex & filter != filter {
                 return vector[vectorIndex]
             }
 
-            let (matrixRow, multiplications) = idxTransformation.indexesToCalculateStatevectorValueAtPosition(vectorIndex)
+            let (matrixRow, multiplications) = indexer.indexesToCalculateStatevectorValueAtPosition(vectorIndex)
             return multiplications.reduce(.zero) { (acc, indexes) in
                 return acc + matrix[matrixRow, indexes.gateMatrixColumn] * vector[indexes.inputStatevectorPosition]
             }

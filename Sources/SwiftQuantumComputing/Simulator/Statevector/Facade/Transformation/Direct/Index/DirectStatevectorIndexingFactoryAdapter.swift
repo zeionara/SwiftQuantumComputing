@@ -27,11 +27,11 @@ struct DirectStatevectorIndexingFactoryAdapter {}
 // MARK: - DirectStatevectorIndexingFactory methods
 
 extension DirectStatevectorIndexingFactoryAdapter: DirectStatevectorIndexingFactory {
-    func makeSingleQubitGateIndexTransformation(gateInput: Int) -> DirectStatevectorIndexing {
-        return DirectStatevectorSingleQubitGateIndexes(gateInput: gateInput)
+    func makeSingleQubitGateIndexer(gateInput: Int) -> DirectStatevectorIndexing {
+        return DirectStatevectorSingleQubitGateIndexer(gateInput: gateInput)
     }
 
-    func makeMultiQubitGateIndexTransformation(gateInputs: [Int]) -> DirectStatevectorIndexing {
-        return DirectStatevectorMultiQubitGateIndexes(gateInputs: gateInputs)
+    func makeMultiQubitGateIndexer(gateInputs: [Int]) -> DirectStatevectorIndexing {
+        return DirectStatevectorMultiQubitGateIndexer(gateInputs: gateInputs)
     }
 }

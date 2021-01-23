@@ -1,5 +1,5 @@
 //
-//  DirectStatevectorSingleQubitGateIndexes.swift
+//  DirectStatevectorSingleQubitGateIndexer.swift
 //  SwiftQuantumComputing
 //
 //  Created by Enrique de la Torre on 22/01/2021.
@@ -22,7 +22,7 @@ import Foundation
 
 // MARK: - Main body
 
-struct DirectStatevectorSingleQubitGateIndexes {
+struct DirectStatevectorSingleQubitGateIndexer {
 
     // MARK: - Private properties
 
@@ -39,7 +39,7 @@ struct DirectStatevectorSingleQubitGateIndexes {
 
 // MARK: - DirectStatevectorIndexing methods
 
-extension DirectStatevectorSingleQubitGateIndexes: DirectStatevectorIndexing {
+extension DirectStatevectorSingleQubitGateIndexer: DirectStatevectorIndexing {
     func indexesToCalculateStatevectorValueAtPosition(_ position: Int) -> DirectStatevectorAdditionIndexes {
         if position & mask == 0 {
             return (0, AnySequence([(0, position), (1,  position | mask)]))

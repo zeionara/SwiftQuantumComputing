@@ -1,5 +1,5 @@
 //
-//  DirectStatevectorMultiQubitGateIndexes.swift
+//  DirectStatevectorMultiQubitGateIndexer.swift
 //  SwiftQuantumComputing
 //
 //  Created by Enrique de la Torre on 16/01/2021.
@@ -22,7 +22,7 @@ import Foundation
 
 // MARK: - Main body
 
-struct DirectStatevectorMultiQubitGateIndexes {
+struct DirectStatevectorMultiQubitGateIndexer {
 
     // MARK: - Private properties
 
@@ -58,7 +58,7 @@ struct DirectStatevectorMultiQubitGateIndexes {
 
 // MARK: - DirectStatevectorIndexing methods
 
-extension DirectStatevectorMultiQubitGateIndexes: DirectStatevectorIndexing {
+extension DirectStatevectorMultiQubitGateIndexer: DirectStatevectorIndexing {
     func indexesToCalculateStatevectorValueAtPosition(_ position: Int) -> DirectStatevectorAdditionIndexes {
         let matrixRow = rearranger.rearrangeBits(in: position)
 
