@@ -793,6 +793,8 @@
 		FFDCA37D23F9CFFD00BBDD8F /* Gate+InversionAboutMean.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCA37B23F9CFFD00BBDD8F /* Gate+InversionAboutMean.swift */; };
 		FFDCA37F23F9D1CC00BBDD8F /* Gate+InversionAboutMeanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCA37E23F9D1CC00BBDD8F /* Gate+InversionAboutMeanTests.swift */; };
 		FFDCA38023F9D1CC00BBDD8F /* Gate+InversionAboutMeanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDCA37E23F9D1CC00BBDD8F /* Gate+InversionAboutMeanTests.swift */; };
+		FFDD2F8225BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD2F8125BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift */; };
+		FFDD2F8325BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD2F8125BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift */; };
 		FFDDDD8823BCC49400772A03 /* XorEquationSystemBruteForceSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDDD8723BCC49400772A03 /* XorEquationSystemBruteForceSolver.swift */; };
 		FFDDDD8923BCC49400772A03 /* XorEquationSystemBruteForceSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDDD8723BCC49400772A03 /* XorEquationSystemBruteForceSolver.swift */; };
 		FFDDDD8B23BCE8AF00772A03 /* XorEquationSystemBruteForceSolverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDDDD8A23BCE8AF00772A03 /* XorEquationSystemBruteForceSolverTests.swift */; };
@@ -1371,6 +1373,7 @@
 		FFDC4A012414581900DF1E42 /* Gate+ModularExponentiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gate+ModularExponentiation.swift"; sourceTree = "<group>"; };
 		FFDCA37B23F9CFFD00BBDD8F /* Gate+InversionAboutMean.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gate+InversionAboutMean.swift"; sourceTree = "<group>"; };
 		FFDCA37E23F9D1CC00BBDD8F /* Gate+InversionAboutMeanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gate+InversionAboutMeanTests.swift"; sourceTree = "<group>"; };
+		FFDD2F8125BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectStatevectorIndexingFactoryTestDouble.swift; sourceTree = "<group>"; };
 		FFDDDD8723BCC49400772A03 /* XorEquationSystemBruteForceSolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorEquationSystemBruteForceSolver.swift; sourceTree = "<group>"; };
 		FFDDDD8A23BCE8AF00772A03 /* XorEquationSystemBruteForceSolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorEquationSystemBruteForceSolverTests.swift; sourceTree = "<group>"; };
 		FFDDDD9023BCED4200772A03 /* XorEquationSystemTestDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XorEquationSystemTestDouble.swift; sourceTree = "<group>"; };
@@ -2219,6 +2222,7 @@
 		FF69F7432465C10B002E5A9A /* Transformation */ = {
 			isa = PBXGroup;
 			children = (
+				FFDD2F7F25BCA673008ACBEE /* Direct */,
 				FF69F7442465C222002E5A9A /* StatevectorTransformationTestDouble.swift */,
 			);
 			path = Transformation;
@@ -3004,6 +3008,22 @@
 				FFD7A2F4259D0E42002FB663 /* SimulatorMatrixTestDouble.swift */,
 			);
 			path = SimulatorMatrix;
+			sourceTree = "<group>";
+		};
+		FFDD2F7F25BCA673008ACBEE /* Direct */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD2F8025BCA681008ACBEE /* Index */,
+			);
+			path = Direct;
+			sourceTree = "<group>";
+		};
+		FFDD2F8025BCA681008ACBEE /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				FFDD2F8125BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift */,
+			);
+			path = Index;
 			sourceTree = "<group>";
 		};
 		FFDDDD8D23BCEC4800772A03 /* Algorithm */ = {
@@ -3900,6 +3920,7 @@
 				FFB09CC224465E1C00C098C3 /* Vector+IsAdditionOfSquareModulusApproximatelyEqualToOneTests.swift in Sources */,
 				FF1116B923B1916A00AFD0AF /* String+BitXorTests.swift in Sources */,
 				FF149DF2222B2C9C00408E2D /* MainGeneticFactoryTests.swift in Sources */,
+				FFDD2F8225BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift in Sources */,
 				FF78EF5A23B9227000BA53A1 /* XorEquationSystemAdapterTests.swift in Sources */,
 				FF0694DE21CBFF3000B5D469 /* StatevectorRegisterTestDouble.swift in Sources */,
 				FF411CB52529EA860047A0CD /* Vector+EliminationMatrixTests.swift in Sources */,
@@ -4348,6 +4369,7 @@
 				FFB09CC324465E1C00C098C3 /* Vector+IsAdditionOfSquareModulusApproximatelyEqualToOneTests.swift in Sources */,
 				FF7374AF2378471600C6FA26 /* ArrayGate+QubitCountTests.swift in Sources */,
 				FF1116BA23B1916A00AFD0AF /* String+BitXorTests.swift in Sources */,
+				FFDD2F8325BCA6F8008ACBEE /* DirectStatevectorIndexingFactoryTestDouble.swift in Sources */,
 				FF149DF3222B2C9C00408E2D /* MainGeneticFactoryTests.swift in Sources */,
 				FF78EF5B23B9227000BA53A1 /* XorEquationSystemAdapterTests.swift in Sources */,
 				FF411CB62529EA860047A0CD /* Vector+EliminationMatrixTests.swift in Sources */,
