@@ -2832,6 +2832,19 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FFB77ECB25BC9DDA008798F6 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				FF1581FC25B632D700AA1BE3 /* DirectStatevectorIndexing.swift */,
+				FFB77E9325BC63CA008798F6 /* DirectStatevectorIndexingFactory.swift */,
+				FFB77EA025BC7163008798F6 /* DirectStatevectorIndexingFactoryAdapter.swift */,
+				FFC1C5A825B37EAD004A4445 /* DirectStatevectorMultiQubitGateIndexes.swift */,
+				FF46178725B4B5F600FD9660 /* DirectStatevectorMultiQubitGateMultiplicationIndexes.swift */,
+				FF03271925BB5D9600A3E91A /* DirectStatevectorSingleQubitGateIndexes.swift */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
 		FFB7F567227CD5E100DF2937 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -2951,12 +2964,7 @@
 		FFC1C5A125B37ADD004A4445 /* Direct */ = {
 			isa = PBXGroup;
 			children = (
-				FF1581FC25B632D700AA1BE3 /* DirectStatevectorIndexing.swift */,
-				FFB77E9325BC63CA008798F6 /* DirectStatevectorIndexingFactory.swift */,
-				FFB77EA025BC7163008798F6 /* DirectStatevectorIndexingFactoryAdapter.swift */,
-				FFC1C5A825B37EAD004A4445 /* DirectStatevectorMultiQubitGateIndexes.swift */,
-				FF46178725B4B5F600FD9660 /* DirectStatevectorMultiQubitGateMultiplicationIndexes.swift */,
-				FF03271925BB5D9600A3E91A /* DirectStatevectorSingleQubitGateIndexes.swift */,
+				FFB77ECB25BC9DDA008798F6 /* Index */,
 				FF853B392447A70C00D69647 /* DirectStatevectorTransformation.swift */,
 			);
 			path = Direct;
