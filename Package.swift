@@ -8,12 +8,17 @@ var dependencies: [Package.Dependency] = [
         .exact("0.0.8")
     )
 ]
+
+var moduleDependencies: [PackageDescription.Target.Dependency] = []
 #if os(Linux)
 dependencies.append(
     .package(
         url: "https://github.com/indisoluble/CBLAS-Linux.git",
         .exact("1.0.0")
     )
+)
+moduleDependencies.append(
+    .product(name: "CBLAS-Linux", package: "CBLAS-Linux")
 )
 #endif
 
@@ -46,7 +51,7 @@ let package = Package(
                     name: "ComplexModule",
                     package: "swift-numerics"
                 )
-            ],
+            ] + moduleDependencies,
             exclude: [
                 "Drawer"
             ]
